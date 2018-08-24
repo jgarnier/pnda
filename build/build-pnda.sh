@@ -64,23 +64,23 @@ function invocation_error {
 # List of PNDA components
 #
 declare -A bom=(
-[platform-console-backend]=
-[platform-console-frontend]=
-[platform-data-mgmnt]=
-[platform-deployment-manager]=
-[platform-libraries]=
-[platform-package-repository]=
-[platform-testing]=
-[platform-gobblin-modules]=
+[platform-console-backend]=develop
+[platform-console-frontend]=develop
+[platform-data-mgmnt]=develop
+[platform-deployment-manager]=develop
+[platform-libraries]=develop
+[platform-package-repository]=develop
+[platform-testing]=PNDA-4899
+[platform-gobblin-modules]=develop
 )
 
 # List of upstream projects
 #
 declare -A upstream=(
-[kafkamanager]=
-[jupyterproxy]=
-[gobblin]=
-[haproxy]=
+[kafkamanager]=develop
+[jupyterproxy]=develop
+[gobblin]=develop
+[haproxy]=develop
 )
 
 if [[ $HADOOP_DISTRIBUTION == 'CDH' ]]; then
@@ -127,7 +127,7 @@ elif [[ ${MODE} == "RELEASE" ]] || [[ ${MODE} == "BRANCH" ]]; then
     if [[ -z ${ARG} ]]; then
         invocation_error
     fi
-    fill_bom ${ARG}
+    #fill_bom ${ARG}
 
 else
     invocation_error
